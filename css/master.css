@@ -22,7 +22,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.nav ul li {
+.nav li {
   display: block;
   text-align: center;
   font-family: 'Libre Baskerville', serif;
@@ -33,7 +33,10 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
-.nav ul li::after {
+.active-page {
+  color: hsl(225, 85%, 60%);
+}
+.nav li::after {
   content: " ";
   display: block;
   width: 100%;
@@ -43,14 +46,11 @@ body {
   transform: scale(0, 1);
   position: relative;
 }
-.nav ul li:hover::after {
+.nav li:hover::after {
   transform: scale(1, 1);
 }
-.nav ul li:hover {
+.nav li:hover {
   cursor: pointer;
-}
-.active-page {
-  color: hsl(225, 85%, 60%);
 }
 /* Home */
 .home {
