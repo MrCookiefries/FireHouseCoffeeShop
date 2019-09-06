@@ -12,4 +12,9 @@ $(document).ready(() => {
     window.location.href = "./menu.html";
   })
 
+  $('.mobile').on('click', () => {
+    $('.nav .desktop').slideToggle();
+    $('.navigationSymbol').toggleClass('rotate');
+  })
+
 })
