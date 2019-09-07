@@ -25,7 +25,7 @@ html {
 .nav ul li {
   display: block;
   text-align: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Merienda', cursive;
   font-size: 20px;
   font-weight: 900;
   padding: 10px;
@@ -82,6 +82,7 @@ html {
 }
 /* Home */
 .home {
+  color: hsl(0, 0%, 21%);
   display: grid;
   width: 100%;
   height: 100%;
@@ -125,15 +126,18 @@ html {
   grid-area: sidebar;
   padding: 10px;
   margin: 60px 0;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 .basic-info h2 {
   text-decoration: underline double hsl(62, 78%, 75%);
   margin-bottom: 10px;
   font-size: 32px;
   text-align: left;
+  font-family: 'Libre Baskerville', serif;
 }
 .basic-info ul {
   text-align: left;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 .basic-info ul li {
   list-style: circle inside;
@@ -150,6 +154,7 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 .guides figure {
   width: 300px;
@@ -172,16 +177,78 @@ html {
   font-size: 16;
 }
 /* About */
+.shadow {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: hsl(0, 0%, 21%);
+}
 .directions {
-  padding: 10px;
+  padding: 20px 10px 20px 0;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 }
-.directions div h1 {
+.directions div.address {
+  padding-right: 20px;
+}
+.directions div.address h2 {
+  text-align: left;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 36px;
+  padding: 4px 4px 4px 20px;
+  background-color: hsl(0, 0%, 21%);
+  border-radius: 0 60px 60px 0;
+  color: hsl(0, 0%, 100%);
+}
+.directions div.address p {
+  font-size: 18px;
+  padding: 10px;
+}
+.directions iframe {
+  width: 100%;
+  height: 100%;
+  border: 2px solid hsl(0, 0%, 21%);
+}
+.yep {
+  padding: 0 10px 10px;
+}
+.yep button {
   text-align: center;
-  margin-bottom: 10px;
-  text-decoration: underline double hsl(62, 78%, 75%);
+  font-size: 20px;
+  font-family: 'Libre Baskerville', serif;
+  padding: 6px;
+  position: relative;
+  background-image: radial-gradient(circle, hsl(62, 78%, 75%), hsl(21, 63%, 61%));
+  border: 6px groove hsl(0, 0%, 21%);
+}
+.yep button:hover {
+  cursor: pointer;
+}
+.yep button:focus {
+  outline: none;
+  top: 2px;
+  left: 2px;
+}
+.yep h1 {
+  font-size: 80px;
+  padding-bottom: 10px;
+  font-family: 'Merienda', cursive;
+  text-align: center;
+  background-color: hsl(0, 0%, 21%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0 0 60% 60%;
+  margin: 0 10vw 40px 10vw;
+}
+.yep p {
+  text-indent: 20px;
+  line-height: 1.4em;
+  font-size: 18px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-bottom: 20px;
+}
+.yep p strong {
+  font-size: 30px;
+  font-weight: normal;
 }
 /* Menu */
 /* Footer */
@@ -194,6 +261,11 @@ html {
   background-image: radial-gradient(circle, hsl(62, 78%, 75%), hsl(21, 63%, 61%));
 }
 /* Responsive */
+@media screen and (min-width: 1200px) {
+  .about .shadow {
+    box-shadow: 4px 0 4px 2px hsl(0, 0%, 81%), -4px 0 4px 2px hsl(0, 0%, 81%);
+  }
+}
 @media screen and (max-width: 900px) {
   .guides {
     display: flex;
@@ -203,6 +275,24 @@ html {
   }
   .guides figure {
     margin: 20px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .directions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .directions div {
+    margin: 0;
+    width: 100%;
+  }
+  .directions div iframe {
+    height: 80vw;
+  }
+  .directions div.map {
+    margin: 40px 0 0 10px;
   }
 }
 @media screen and (max-width: 600px) {
