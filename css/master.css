@@ -251,6 +251,41 @@ html {
   font-weight: normal;
 }
 /* Menu */
+.food {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+.food .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.food figure {
+  width: 300px;
+  height: auto;
+  border: 2px solid hsl(0, 0%, 0%);
+}
+.food figure .top .photo {
+  width: 100%;
+  height: 300px;
+  background-image-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid hsl(21, 63%, 61%);
+  background-image: url("../assets/taterTots.png");
+}
+.food figure .top div.text {
+  padding: 6px;
+}
+.food figure .top div.text p {
+  font-size: 18px;
+  font-family: 'Libre Baskerville', serif;
+}
+.food figure p.description {
+  padding: 6px;
+}
 /* Footer */
 .footer {
   grid-area: footer;
