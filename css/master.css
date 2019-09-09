@@ -251,6 +251,19 @@ html {
   font-weight: normal;
 }
 /* Menu */
+.menu {
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0.5) 100%), linear-gradient(45deg, rgba(229, 128, 66, 0.45) 0%, rgba(229, 128, 66, 0.45) 25%, rgba(212, 160, 112, 0.45) 25%, rgba(212, 160, 112, 0.45) 50%, rgba(195, 191, 157, 0.45) 50%, rgba(195, 191, 157, 0.45) 75%, rgba(178, 223, 203, 0.45) 75%, rgba(178, 223, 203, 0.45) 100%), linear-gradient(135deg, #fbf875 0%, #fbf875 25%, #f6a76e 25%, #f6a76e 50%, #f05566 50%, #f05566 75%, #eb045f 75%, #eb045f 100%);
+}
+.menu h1.category {
+  text-align: left;
+  font-family: 'Merienda', cursive;
+  font-size: 36px;
+  padding: 4px 4px 4px 20px;
+  background-color: hsl(0, 0%, 21%);
+  border-radius: 0 60px 60px 0;
+  color: hsl(0, 0%, 100%);
+  margin: 20px 20vw 20px 0;
+}
 .food {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -265,7 +278,9 @@ html {
 .food figure {
   width: 300px;
   height: auto;
-  border: 2px solid hsl(0, 0%, 0%);
+  border-radius: 0 0 10px 10px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: -4px -4px 2px 2px hsla(0, 0%, 81%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 21%, 0.25);
 }
 .food figure .top .photo {
   width: 100%;
@@ -273,7 +288,6 @@ html {
   background-image-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 2px solid hsl(21, 63%, 61%);
   background-image: url("../assets/taterTots.png");
 }
 .food figure .top div.text {
@@ -299,6 +313,11 @@ html {
 @media screen and (min-width: 1200px) {
   .about .shadow {
     box-shadow: 4px 0 4px 2px hsl(0, 0%, 81%), -4px 0 4px 2px hsl(0, 0%, 81%);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .food {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 900px) {
@@ -328,6 +347,11 @@ html {
   }
   .directions div.map {
     margin: 40px 0 0 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .food {
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 600px) {
@@ -362,5 +386,9 @@ html {
   }
   .nav .desktop li:hover::after {
     transform: scale(0);
+  }
+  .food {
+    padding: 10px;
+    grid-gap: 10px;
   }
 }
