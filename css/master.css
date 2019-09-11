@@ -10,7 +10,25 @@ body,
 html {
   font-family: 'PT Sans Narrow', sans-serif;
 }
-/* Nav */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 .nav {
   grid-area: nav;
   position: sticky;
@@ -129,7 +147,7 @@ html {
   font-family: 'PT Sans Narrow', sans-serif;
 }
 .basic-info h2 {
-  text-decoration: underline double hsl(62, 78%, 75%);
+  text-decoration: underline double hsl(21, 63%, 61%);
   margin-bottom: 10px;
   font-size: 32px;
   text-align: left;
@@ -138,12 +156,18 @@ html {
 .basic-info ul {
   text-align: left;
   font-family: 'PT Sans Narrow', sans-serif;
+  margin-bottom: 10vh;
 }
 .basic-info ul li {
-  list-style: circle inside;
-  line-height: 1.2em;
+  list-style: none;
+  line-height: 1.4em;
   font-weight: 500;
   font-size: 18px;
+}
+.basic-info ul li::before {
+  content: "\2605";
+  display: inline-block;
+  margin-right: 10px;
 }
 .main {
   grid-area: main;
@@ -158,8 +182,18 @@ html {
 }
 .guides figure {
   width: 300px;
-  border: 2px solid hsl(0, 0%, 0%);
+  border: 4px groove hsl(21, 63%, 61%);
   padding: 5px;
+  background-color: hsl(0, 0%, 21%);
+  border-radius: 18px;
+  box-shadow: -4px -4px 2px 2px hsla(0, 0%, 81%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 21%, 0.25);
+}
+.guides figure:hover {
+  cursor: pointer;
+  animation: shake 800ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .guides figure div.flex {
   height: 100%;
@@ -171,10 +205,15 @@ html {
   width: 100px;
   height: 100px;
   margin-right: 5px;
-  border: 2px solid hsl(0, 0%, 0%);
+}
+.guides figure div.flex div.img img {
+  width: 100%;
+  height: 100%;
 }
 .guides figure div.flex p {
   font-size: 16;
+  font-family: 'Libre Baskerville', serif;
+  color: hsl(0, 0%, 100%);
 }
 /* About */
 .shadow {
@@ -310,10 +349,16 @@ html {
 }
 .footer p {
   color: hsl(0, 0%, 0%);
+  display: inline-block;
+  margin: 0 10px;
 }
 .footer p span {
   font-weight: bolder;
   cursor: pointer;
+}
+.footer p a {
+  color: hsl(0, 0%, 0%);
+  text-decoration-color: hsl(0, 0%, 100%);
 }
 /* Responsive */
 @media screen and (min-width: 1200px) {
