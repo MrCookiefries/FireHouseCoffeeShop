@@ -6,10 +6,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* Variables */
 body,
 html {
   font-family: 'PT Sans Narrow', sans-serif;
 }
+/* Mixin Functions */
+/* Keyframe Animations */
 @keyframes shake {
   10%,
   90% {
@@ -29,6 +32,7 @@ html {
     transform: translate3d(4px, 0, 0);
   }
 }
+/* Navigation Bar */
 .nav {
   grid-area: nav;
   position: sticky;
@@ -180,7 +184,8 @@ html {
   grid-gap: 20px;
   font-family: 'PT Sans Narrow', sans-serif;
 }
-.guides figure {
+.guides figure,
+.yep figure {
   width: 300px;
   border: 4px groove hsl(21, 63%, 61%);
   padding: 5px;
@@ -188,29 +193,34 @@ html {
   border-radius: 18px;
   box-shadow: -4px -4px 2px 2px hsla(0, 0%, 81%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 21%, 0.25);
 }
-.guides figure:hover {
+.guides figure:hover,
+.yep figure:hover {
   cursor: pointer;
   animation: shake 800ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
-.guides figure div.flex {
+.guides figure div.flex,
+.yep figure div.flex {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.guides figure div.flex div.img {
+.guides figure div.flex div.img,
+.yep figure div.flex div.img {
   width: 100px;
   height: 100px;
   margin-right: 5px;
 }
-.guides figure div.flex div.img img {
+.guides figure div.flex div.img img,
+.yep figure div.flex div.img img {
   width: 100%;
   height: 100%;
 }
-.guides figure div.flex p {
+.guides figure div.flex p,
+.yep figure div.flex p {
   font-size: 16;
   font-family: 'Libre Baskerville', serif;
   color: hsl(0, 0%, 100%);
@@ -251,23 +261,6 @@ html {
 .yep {
   padding: 0 10px 10px;
 }
-.yep button {
-  text-align: center;
-  font-size: 20px;
-  font-family: 'Libre Baskerville', serif;
-  padding: 6px;
-  position: relative;
-  background-image: radial-gradient(circle, hsl(62, 78%, 75%), hsl(21, 63%, 61%));
-  border: 6px groove hsl(0, 0%, 21%);
-}
-.yep button:hover {
-  cursor: pointer;
-}
-.yep button:focus {
-  outline: none;
-  top: 2px;
-  left: 2px;
-}
 .yep h1 {
   font-size: 80px;
   padding-bottom: 10px;
@@ -278,14 +271,14 @@ html {
   border-radius: 0 0 60% 60%;
   margin: 0 10vw 40px 10vw;
 }
-.yep p {
+.yep p.paragraph {
   text-indent: 20px;
   line-height: 1.4em;
   font-size: 18px;
   font-family: 'PT Sans Narrow', sans-serif;
   margin-bottom: 20px;
 }
-.yep p strong {
+.yep p.paragraph strong {
   font-size: 30px;
   font-weight: normal;
 }
@@ -378,7 +371,8 @@ html {
     justify-content: center;
     flex-direction: column;
   }
-  .guides figure {
+  .guides figure,
+  .yep figure {
     margin: 20px 0;
   }
 }

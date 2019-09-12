@@ -17,8 +17,8 @@ $(document).ready(() => {
     $('.navigationSymbol').toggleClass('rotate');
   })
   //Button Routes
-  $('.yep button').on('click', () => {
-    $('.yep button').css({
+  $('.yep figure').on('click', () => {
+    $('.yep figure').css({
       "top": "2px",
       "left": "2px"
     });
