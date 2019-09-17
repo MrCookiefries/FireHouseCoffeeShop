@@ -32,6 +32,16 @@ html {
     transform: translate3d(4px, 0, 0);
   }
 }
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  to {
+    fill-opacity: 1;
+  }
+}
 /* Navigation Bar */
 .nav {
   grid-area: nav;
@@ -136,13 +146,128 @@ html {
   width: 100%;
   position: absolute;
 }
-.darken h1 {
-  font-size: 60px;
-  font-family: 'Merienda', cursive;
+.darken #main-title {
   text-align: center;
   padding: 20px;
-  color: hsl(0, 0%, 100%);
-  text-shadow: 3px 3px 1px hsl(0, 0%, 0%), -3px -3px 1px hsl(0, 0%, 0%);
+  animation: fill 6s ease forwards 4s;
+  fill: url(#title-gradient) hsl(62, 78%, 75%);
+  fill-opacity: 0;
+}
+.darken #main-title path {
+  stroke: hsl(0, 0%, 0%);
+  font-weight: 900;
+  font: 400px;
+  stroke-width: 4px;
+}
+.darken #main-title path:nth-child(1) {
+  stroke-dasharray: 255.74264526px;
+  stroke-dashoffset: 255.74264526px;
+  animation: line-anim 3s ease forwards;
+}
+.darken #main-title path:nth-child(2) {
+  stroke-dasharray: 382.38314819px;
+  stroke-dashoffset: 382.38314819px;
+  animation: line-anim 3s ease forwards 200ms;
+}
+.darken #main-title path:nth-child(3) {
+  stroke-dasharray: 283.99966431px;
+  stroke-dashoffset: 283.99966431px;
+  animation: line-anim 3s ease forwards 400ms;
+}
+.darken #main-title path:nth-child(4) {
+  stroke-dasharray: 296.28186035px;
+  stroke-dashoffset: 296.28186035px;
+  animation: line-anim 3s ease forwards 600ms;
+}
+.darken #main-title path:nth-child(5) {
+  stroke-dasharray: 183.39788818px;
+  stroke-dashoffset: 183.39788818px;
+  animation: line-anim 3s ease forwards 800ms;
+}
+.darken #main-title path:nth-child(6) {
+  stroke-dasharray: 232.99571228px;
+  stroke-dashoffset: 232.99571228px;
+  animation: line-anim 3s ease forwards 1000ms;
+}
+.darken #main-title path:nth-child(7) {
+  stroke-dasharray: 283.99990845px;
+  stroke-dashoffset: 283.99990845px;
+  animation: line-anim 3s ease forwards 1200ms;
+}
+.darken #main-title path:nth-child(8) {
+  stroke-dasharray: 382.38278198px;
+  stroke-dashoffset: 382.38278198px;
+  animation: line-anim 3s ease forwards 1400ms;
+}
+.darken #main-title path:nth-child(9) {
+  stroke-dasharray: 323.284729px;
+  stroke-dashoffset: 323.284729px;
+  animation: line-anim 3s ease forwards 1600ms;
+}
+.darken #main-title path:nth-child(10) {
+  stroke-dasharray: 307.59698486px;
+  stroke-dashoffset: 307.59698486px;
+  animation: line-anim 3s ease forwards 1800ms;
+}
+.darken #main-title path:nth-child(11) {
+  stroke-dasharray: 284.04208374px;
+  stroke-dashoffset: 284.04208374px;
+  animation: line-anim 3s ease forwards 2000ms;
+}
+.darken #main-title path:nth-child(12) {
+  stroke-dasharray: 284.00039673px;
+  stroke-dashoffset: 284.00039673px;
+  animation: line-anim 3s ease forwards 2200ms;
+}
+.darken #main-title path:nth-child(13) {
+  stroke-dasharray: 349.95953369px;
+  stroke-dashoffset: 349.95953369px;
+  animation: line-anim 3s ease forwards 2400ms;
+}
+.darken #main-title path:nth-child(14) {
+  stroke-dasharray: 323.28530884px;
+  stroke-dashoffset: 323.28530884px;
+  animation: line-anim 3s ease forwards 2600ms;
+}
+.darken #main-title path:nth-child(15) {
+  stroke-dasharray: 322.34197998px;
+  stroke-dashoffset: 322.34197998px;
+  animation: line-anim 3s ease forwards 2800ms;
+}
+.darken #main-title path:nth-child(16) {
+  stroke-dasharray: 322.34188843px;
+  stroke-dashoffset: 322.34188843px;
+  animation: line-anim 3s ease forwards 3000ms;
+}
+.darken #main-title path:nth-child(17) {
+  stroke-dasharray: 284.00076294px;
+  stroke-dashoffset: 284.00076294px;
+  animation: line-anim 3s ease forwards 3200ms;
+}
+.darken #main-title path:nth-child(18) {
+  stroke-dasharray: 284.00079346px;
+  stroke-dashoffset: 284.00079346px;
+  animation: line-anim 3s ease forwards 3400ms;
+}
+.darken #main-title path:nth-child(19) {
+  stroke-dasharray: 392.79934692px;
+  stroke-dashoffset: 392.79934692px;
+  animation: line-anim 3s ease forwards 3600ms;
+}
+.darken #main-title path:nth-child(20) {
+  stroke-dasharray: 382.37515259px;
+  stroke-dashoffset: 382.37515259px;
+  animation: line-anim 3s ease forwards 3800ms;
+}
+.darken #main-title path:nth-child(21) {
+  stroke-dasharray: 323.2925415px;
+  stroke-dashoffset: 323.2925415px;
+  animation: line-anim 3s ease forwards 4000ms;
+}
+.darken #main-title path:nth-child(22) {
+  stroke-dasharray: 379.06097412px;
+  stroke-dashoffset: 379.06097412px;
+  animation: line-anim 3s ease forwards 4200ms;
 }
 .basic-info {
   grid-area: sidebar;
@@ -172,6 +297,7 @@ html {
   content: "\2605";
   display: inline-block;
   margin-right: 10px;
+  color: hsl(21, 63%, 61%);
 }
 .main {
   grid-area: main;
@@ -302,6 +428,7 @@ html {
   text-align: center;
   line-height: 1.6em;
   font-size: 20px;
+  font-weight: 500;
 }
 .quotes-panel figure .quote-author {
   font-family: 'Merienda', cursive;
@@ -496,7 +623,8 @@ html {
 }
 @media screen and (max-width: 500px) {
   .quotes-panel figure .quote {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 600;
   }
   .quotes-panel figure .quote-author {
     font-size: 18px;

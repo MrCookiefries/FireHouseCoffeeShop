@@ -62,25 +62,87 @@ function changeSlides(num) {
   slideIndex += num;
   if (slideIndex > 2) {
     slideIndex = 0;
+  } else if (slideIndex < 0) {
+    slideIndex = 2;
+  }
+
+  function switchSlide(n) {
+    if (n == 1) {
+      $('.quote').hide("drop", {
+        direction: "left",
+        distance: "10vw"
+      });
+      $('.quote-author').hide("drop", {
+        direction: "left",
+        distance: "10vw"
+      });
+    } else {
+      $('.quote').hide("drop", {
+        direction: "right",
+        distance: "10vw"
+      });
+      $('.quote-author').hide("drop", {
+        direction: "right",
+        distance: "10vw"
+      });
+    }
+  }
+
+  function displaySlide(n) {
+    if (n == 1) {
+      $('.quote').show("drop", {
+        direction: "right",
+        distance: "10vw"
+      });
+      $('.quote-author').show("drop", {
+        direction: "right",
+        distance: "10vw"
+      });
+    } else {
+      $('.quote').show("drop", {
+        direction: "left",
+        distance: "10vw"
+      });
+      $('.quote-author').show("drop", {
+        direction: "left",
+        distance: "10vw"
+      });
+    }
   }
   switch (slideIndex) {
     case 0:
-      $('#quote').html(quotes.amaya.words);
-      $('#quote-author').html(quotes.amaya.name);
-      $('#slide-number').html(quotes.amaya.slide);
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.amaya.words);
+        $('#quote-author').html(quotes.amaya.name);
+        $('#slide-number').html(quotes.amaya.slide);
+        displaySlide(num);
+      }, 600)
       break;
     case 1:
-      $('#quote').html(quotes.jameson.words);
-      $('#quote-author').html(quotes.jameson.name);
-      $('#slide-number').html(quotes.jameson.slide);
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.jameson.words);
+        $('#quote-author').html(quotes.jameson.name);
+        $('#slide-number').html(quotes.jameson.slide);
+        displaySlide(num);
+      }, 600)
       break;
     case 2:
-      $('#quote').html(quotes.amber.words);
-      $('#quote-author').html(quotes.amber.name);
-      $('#slide-number').html(quotes.amber.slide);
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.amber.words);
+        $('#quote-author').html(quotes.amber.name);
+        $('#slide-number').html(quotes.amber.slide);
+        displaySlide(num);
+      }, 600)
       break;
     default:
       console.log("Error with quotes panel.");
       break;
   }
+}
+const title = document.querySelectorAll("#main-title path");
+for (let i = 0; i < title.length; i++) {
+  console.log(`Letter ${i} is ${title[i].getTotalLength()}`);
 }
