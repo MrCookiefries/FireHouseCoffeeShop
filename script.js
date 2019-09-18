@@ -11,6 +11,25 @@ $(document).ready(() => {
   $("#menu").on('click', () => {
     window.location.href = "./menu.html";
   })
+  //Guide Routes
+  $("#guide-address").on('click', event => {
+    window.location.href = "./about.html#location-address";
+  })
+  $("#guide-map").on('click', event => {
+    window.location.href = "./about.html#location-map";
+  })
+  $("#guide-drinks").on('click', event => {
+    window.location.href = "./menu.html#location-drinks";
+  })
+  $("#guide-food").on('click', event => {
+    window.location.href = "./menu.html#location-food";
+  })
+  $("#guide-reviews").on('click', event => {
+    window.location.href = "./about.html#location-reviews";
+  })
+  $("#guide-about").on('click', event => {
+    window.location.href = "./about.html#location-about";
+  })
   //Mobile Nav Support
   $('.mobile').on('click', () => {
     $('.nav .desktop').slideToggle();
@@ -34,6 +53,27 @@ $(document).ready(() => {
   $(".phone-number").on("click", () => {
     window.open("tel:+15732613707", "_blank");
   })
+  // Scroll Animations
+  function checkIfInView() {
+    let windowHeight = $window.height();
+    let windowTopPosition = $window.scrollTop();
+    let windowBottomPosition = (windowTopPosition + windowHeight);
+    $.each($scrollAnimateElems, function() {
+      let $element = $(this);
+      let elementHeight = $element.outerHeight();
+      let elementTopPosition = $element.offset().top;
+      let elementBottomPosition = (elementTopPosition + elementHeight);
+      if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+        $element.addClass('in-view');
+      } else {
+        $element.removeClass('in-view');
+      }
+    })
+  }
+  let $window = $(window);
+  let $scrollAnimateElems = $('.scroll');
+  $window.on('scroll resize', checkIfInView);
+  $window.trigger('scroll');
 })
 // Review Quotes
 let slideIndex = 0;
@@ -142,7 +182,7 @@ function changeSlides(num) {
       break;
   }
 }
-const title = document.querySelectorAll("#main-title path");
+/*const title = document.querySelectorAll("#main-title path");
 for (let i = 0; i < title.length; i++) {
   console.log(`Letter ${i} is ${title[i].getTotalLength()}`);
-}
+}*/

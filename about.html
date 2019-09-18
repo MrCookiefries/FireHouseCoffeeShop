@@ -7,7 +7,7 @@
   <title>Firehouse Coffee Shop</title>
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Merienda|PT+Sans+Narrow&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="./css/master.css" type="text/css">
+  <link rel="stylesheet" href="./css/master.min.css" type="text/css">
 </head>
 
 <body>
@@ -24,10 +24,10 @@
       </ul>
     </header>
     <div class="shadow">
-      <section class="yep">
-        <h1>Y.E.P.</h1>
-        <p class="paragraph"><strong>T</strong>he mission of the Youth Empowerment Project (YEP) is to empower youth to positively impact their community. This is accomplished through education, service, grantmaking, and fundraising.</p>
-        <figure>
+      <section id="location-about" class="yep">
+        <h1 class="scroll">Y.E.P.</h1>
+        <p class="paragraph scroll"><strong>T</strong>he mission of the Youth Empowerment Project (YEP) is to empower youth to positively impact their community. This is accomplished through education, service, grantmaking, and fundraising.</p>
+        <figure class="scroll">
           <div class="flex">
             <div>
               <div class="img">
@@ -40,22 +40,23 @@
       </section>
       <section class="directions">
         <div class="address">
-          <h2>Location</h2>
-          <p><b>103 East Hardy<br />St. James, MO 65559</b></p>
-          <h2>Open</h2>
-          <p><b>Days: </b>Monday - Friday (3PM-6PM)<br><b>Months: </b>August - May (School Calendar Days)</p>
-          <h2>Closed</h2>
-          <p><b>Days: </b>Saturday & Sunday (Also on no school days)<br><b>Months: </b>June & July</p>
-          <h2>Payment Methods</h2>
-          <p><b>Cash, Credit, or Debit</b></p>
+          <h2 id="location-address" class="scroll">Location</h2>
+          <p class="scroll"><b>103 East Hardy<br />St. James, MO 65559</b></p>
+          <h2 class="scroll">Open</h2>
+          <p class="scroll"><b>Days: </b>Monday - Friday (3PM-6PM)<br><b>Months: </b>August - May (School Calendar Days)</p>
+          <h2 class="scroll">Closed</h2>
+          <p class="scroll"><b>Days: </b>Saturday & Sunday (Also on no school days)<br><b>Months: </b>June & July</p>
+          <h2 class="scroll">Payment Methods</h2>
+          <p class="scroll"><b>Cash, Credit, or Debit</b></p>
         </div>
-        <div class="map">
-          <iframe
+        <div id="location-map" class="map">
+          <iframe class="scroll"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.245103631024!2d-91.61431468757817!3d37.99474304533428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87dbb36c32739d99%3A0x227f2059cb96ab41!2sThe%20Firehouse%20Coffee%20Shop!5e0!3m2!1sen!2sus!4v1567795780003!5m2!1sen!2sus"
             frameborder="0" allowfullscreen="true"></iframe>
         </div>
       </section>
-      <section class="quotes-panel">
+      <h1 class="reviews" id="location-reviews">Real Reviews</h1>
+      <section class="quotes-panel scroll">
         <figure>
           <p class="slide-number"><strong><span id="slide-number">1</span> / 3</strong></p>
           <p class="quote">&#8220;<span id="quote">The support within the YEP community is endless, and has broadened my gratitude for humanity as a whole. Seeing the constant dedication to do the right thing for others can make a huge difference in the way a person perceives life. Helping others is a passion of mine, and YEP has made it easy for me.</span>&#8221;</p>

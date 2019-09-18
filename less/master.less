@@ -6,6 +6,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.in-view {
+  animation: grow 1s ease-in-out forwards;
+}
+
 /* Variables */
 @colors: {
   white: hsla(0, 100%, 100%, 1);
@@ -32,21 +37,12 @@ html {
 }
 
 /* Keyframe Animations */
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+@keyframes grow {
+  from {
+    opacity: 0;
   }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
+  to {
+    opacity: 1;
   }
 }
 
@@ -162,7 +158,8 @@ html {
 }
 
 .jumbo {
-  background-image: url("../assets/jumbo.jpg");
+  background-color: @colors[dark];
+  background-image: url(../assets/jumbo.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -361,14 +358,13 @@ html {
     padding: 5px;
     background-color: @colors[dark];
     .rounded(18px);
+    transition: transform 600ms ease-in-out;
+    transform: rotate(0deg);
     box-shadow: -4px -4px 2px 2px hsla(0, 0%, 81%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 21%, 0.25);
 
     &:hover {
       cursor: pointer;
-      animation: shake 800ms cubic-bezier(.36,.07,.19,.97) both;
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      perspective: 1000px;
+      transform: rotate(2deg);
     }
 
     div.flex {
@@ -488,10 +484,15 @@ html {
   }
 }
 
+h1.reviews {
+  &:extend(.directions div.address h2);
+  margin-right: 20%;
+}
+
 .quotes-panel {
   height: 80vh;
   margin: 5vh 0;
-  background-image: linear-gradient(hsla(0, 0%, 100%, 0.4) 0%, hsla(0, 0%, 100%, 0.4) 100%),linear-gradient(45deg, rgba(247, 53, 84, 0.5) 0%, rgba(247, 53, 84, 0.5) 12.5%,rgba(239, 79, 73, 0.5) 12.5%, rgba(239, 79, 73, 0.5) 25%,rgba(231, 105, 63, 0.5) 25%, rgba(231, 105, 63, 0.5) 37.5%,rgba(223, 131, 52, 0.5) 37.5%, rgba(223, 131, 52, 0.5) 50%,rgba(215, 158, 42, 0.5) 50%, rgba(215, 158, 42, 0.5) 62.5%,rgba(207, 184, 31, 0.5) 62.5%, rgba(207, 184, 31, 0.5) 75%,rgba(199, 210, 21, 0.5) 75%, rgba(199, 210, 21, 0.5) 87.5%,rgba(191, 236, 10, 0.5) 87.5%, rgba(191, 236, 10, 0.5) 100%),linear-gradient(135deg, rgb(161, 190, 135) 0%, rgb(161, 190, 135) 12.5%,rgb(166, 174, 126) 12.5%, rgb(166, 174, 126) 25%,rgb(171, 158, 117) 25%, rgb(171, 158, 117) 37.5%,rgb(176, 142, 108) 37.5%, rgb(176, 142, 108) 50%,rgb(181, 126, 99) 50%, rgb(181, 126, 99) 62.5%,rgb(186, 110, 90) 62.5%, rgb(186, 110, 90) 75%,rgb(191, 94, 81) 75%, rgb(191, 94, 81) 87.5%,rgb(196, 78, 72) 87.5%, rgb(196, 78, 72) 100%);
+  background-image: linear-gradient(hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0.5) 100%),linear-gradient(45deg, rgba(247, 53, 84, 0.5) 0%, rgba(247, 53, 84, 0.5) 12.5%,rgba(239, 79, 73, 0.5) 12.5%, rgba(239, 79, 73, 0.5) 25%,rgba(231, 105, 63, 0.5) 25%, rgba(231, 105, 63, 0.5) 37.5%,rgba(223, 131, 52, 0.5) 37.5%, rgba(223, 131, 52, 0.5) 50%,rgba(215, 158, 42, 0.5) 50%, rgba(215, 158, 42, 0.5) 62.5%,rgba(207, 184, 31, 0.5) 62.5%, rgba(207, 184, 31, 0.5) 75%,rgba(199, 210, 21, 0.5) 75%, rgba(199, 210, 21, 0.5) 87.5%,rgba(191, 236, 10, 0.5) 87.5%, rgba(191, 236, 10, 0.5) 100%),linear-gradient(135deg, rgb(161, 190, 135) 0%, rgb(161, 190, 135) 12.5%,rgb(166, 174, 126) 12.5%, rgb(166, 174, 126) 25%,rgb(171, 158, 117) 25%, rgb(171, 158, 117) 37.5%,rgb(176, 142, 108) 37.5%, rgb(176, 142, 108) 50%,rgb(181, 126, 99) 50%, rgb(181, 126, 99) 62.5%,rgb(186, 110, 90) 62.5%, rgb(186, 110, 90) 75%,rgb(191, 94, 81) 75%, rgb(191, 94, 81) 87.5%,rgb(196, 78, 72) 87.5%, rgb(196, 78, 72) 100%);
 
   figure {
     width: 100%;
@@ -583,7 +584,13 @@ html {
     height: auto;
     .rounded(0 0 10px 10px);
     background-color: @colors[white];
+    transition: transform 600ms ease-in-out;
+    transform: rotate(0deg);
     box-shadow: -4px -4px 2px 2px hsla(0, 0%, 81%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 21%, 0.25);
+
+    &:hover {
+      transform: rotate(2deg);
+    }
 
     .top {
 
