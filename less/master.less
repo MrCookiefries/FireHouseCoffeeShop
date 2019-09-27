@@ -1,5 +1,6 @@
 /* Global */
-// HELP! Add the "Title-Change" class to elements on hover for animation
+/* ADD NEW HOVER FOR FIGURES.
+MAKE THEM RISE UP AND CAST A SHADOW BELOW */
 *,
 *::after,
 *::before {
@@ -8,12 +9,12 @@
   box-sizing: border-box;
 }
 
-.in-view {
-  animation: grow 1s ease-in-out forwards;
+.scroll {
+  transform: scale(0);
 }
 
-.title-change {
-  animation: title-color 8s infinite 0s ease-in-out;
+.in-view {
+  animation: grow 1s ease-in-out forwards;
 }
 
 /* Variables */
@@ -36,7 +37,6 @@ html {
   font-family: @text[paragraph];
 }
 /* Mixin Functions */
-
 .rounded(@all...) {
   border-radius: @all;
 }
@@ -61,6 +61,7 @@ html {
 
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 @keyframes line-anim {
@@ -86,27 +87,22 @@ html {
     fill-opacity: 1;
   }
 }
-@keyframes line-decor {
-  0%, 100% {
-    text-decoration: underline solid @colors[light];
-  }
-  50% {
-    text-decoration: underline solid @colors[white];
-  }
-}
 @keyframes title-color {
-  0%, 100% {
+  0%,
+  100% {
     color: @colors[orange];
   }
-  25%, 75% {
+
+  35%,
+  65% {
     color: @colors[yellow];
   }
+
   50% {
     color: @colors[white];
   }
 }
 /* Navigation Bar */
-
 .nav {
   grid-area: nav;
   position: sticky;
@@ -189,7 +185,6 @@ html {
   }
 }
 /* Home */
-
 .home {
   color: @colors[yellow];
   background-color: @colors[dark];
@@ -384,7 +379,6 @@ html {
 
   h2 {
     text-decoration: underline solid @colors[white];
-    animation: line-decor 6s infinite 0s ease-in-out;
     margin-bottom: 10px;
     color: @colors[orange];
     font-size: 32px;
@@ -448,12 +442,11 @@ html {
     background-color: @colors[dark];
     .rounded(18px);
     transition: transform 600ms ease-in-out;
-    transform: rotate(0deg);
+    transform: rotate(0deg), scale(0);
     box-shadow: -4px -4px 2px 2px hsla(0, 0%, 21%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 81%, 0.25);
 
-    &:hover {
+    &:hover  {
       cursor: pointer;
-      transform: rotate(2deg);
     }
 
     div.flex {
@@ -482,7 +475,6 @@ html {
   }
 }
 /* About */
-
 .about {
   background-color: @colors[light];
 }
@@ -658,7 +650,6 @@ h1.reviews {
   }
 }
 /* Menu */
-
 .menu {
   background-image: linear-gradient(hsla(0, 0%, 100%, 0.4) 0%, hsla(0, 0%, 100%, 0.4) 100%),linear-gradient(45deg, rgba(229, 128, 66, 0.45) 0%, rgba(229, 128, 66, 0.45) 25%,rgba(212, 160, 112, 0.45) 25%, rgba(212, 160, 112, 0.45) 50%,rgba(195, 191, 157, 0.45) 50%, rgba(195, 191, 157, 0.45) 75%,rgba(178, 223, 203, 0.45) 75%, rgba(178, 223, 203, 0.45) 100%),linear-gradient(135deg, rgb(251, 248, 117) 0%, rgb(251, 248, 117) 25%,rgb(246, 167, 110) 25%, rgb(246, 167, 110) 50%,rgb(240, 85, 102) 50%, rgb(240, 85, 102) 75%,rgb(235, 4, 95) 75%, rgb(235, 4, 95) 100%);
 
@@ -729,7 +720,6 @@ h1.reviews {
   }
 }
 /* Footer */
-
 .footer {
   grid-area: footer;
   text-align: right;

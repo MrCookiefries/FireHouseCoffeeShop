@@ -53,28 +53,30 @@ $(document).ready(() => {
   $(".phone-number").on("click", () => {
     window.open("tel:+15732613707", "_blank");
   })
-  // Scroll Animations
-  function checkIfInView() {
-    let windowHeight = $window.height();
-    let windowTopPosition = $window.scrollTop();
-    let windowBottomPosition = (windowTopPosition + windowHeight);
-    $.each($scrollAnimateElems, function() {
-      let $element = $(this);
-      let elementHeight = $element.outerHeight();
-      let elementTopPosition = $element.offset().top;
-      let elementBottomPosition = (elementTopPosition + elementHeight);
-      if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
-        $element.addClass('in-view');
-      } else {
-        $element.removeClass('in-view');
-      }
-    })
-  }
-  let $window = $(window);
-  let $scrollAnimateElems = $('.scroll');
-  $window.on('scroll resize', checkIfInView);
-  $window.trigger('scroll');
 })
+
+// Scroll Animations
+function checkIfInView() {
+  let windowHeight = $window.height();
+  let windowTopPosition = $window.scrollTop();
+  let windowBottomPosition = (windowTopPosition + windowHeight);
+  $.each($scrollAnimateElems, function() {
+    let $element = $(this);
+    let elementHeight = $element.outerHeight();
+    let elementTopPosition = $element.offset().top;
+    let elementBottomPosition = (elementTopPosition + elementHeight);
+    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  })
+}
+let $window = $(window);
+let $scrollAnimateElems = $('.scroll');
+$window.on('scroll resize', checkIfInView);
+$window.trigger('scroll');
+
 // Review Quotes
 let slideIndex = 0;
 
