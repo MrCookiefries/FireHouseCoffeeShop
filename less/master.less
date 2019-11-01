@@ -434,56 +434,72 @@ html {
   grid-gap: 20px;
   font-family: @text[paragraph];
 
-  figure {
-    width: 300px;
-    border: 4px groove @colors[orange];
-    padding: 5px;
-    background-color: @colors[dark];
-    .rounded(18px);
-    transition: transform 600ms ease-in-out;
-    transform: rotate(0deg) scale(0);
+  div {
     position: relative;
-    z-index: 2;
 
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 80px;
-      bottom: 0;
-      right: 0;
+    figure.current {
+      top: -4px;
+      left: -12px;
+    }
+
+    figure {
+      width: 300px;
+      padding: 5px;
+      top: 0;
+      left: 0;
+      background-color: @colors[dark];
       .rounded(18px);
-      background-image: linear-gradient(45deg, hsla(0, 0%, 100%, 0.4), hsla(0, 0%, 60%, 0.4));
-      transform: translate(8%, 20%);
-      z-index: -1;
-    }
+      transition: transform 600ms ease-in-out, top 400ms, left 400ms;
+      transform: scale(0);
+      position: relative;
+      border: 4px groove @colors[orange];
+      z-index: 4;
 
-    &:hover  {
-      cursor: pointer;
-    }
-
-    div.flex {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      div.img {
-        width: 100px;
-        height: 100px;
-        margin-right: 5px;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
+      &:hover  {
+        cursor: pointer;
       }
 
-      p {
-        font-size: 16;
-        font-family: @text[subtitle];
-        color: @colors[white];
+      div.flex {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div.img {
+          width: 100px;
+          height: 100px;
+          margin-right: 5px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        p {
+          font-size: 16;
+          font-family: @text[subtitle];
+          color: @colors[white];
+        }
+      }
+    }
+    span {
+      background-image: linear-gradient(45deg, hsla(0, 0%, 100%, 0.4), hsla(0, 0%, 60%, 0.4));
+      position: absolute;
+      width: 300px;
+      height: 100px;
+      .rounded(18px);
+      bottom: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+      transition: opacity 400ms ease-in 200ms, transform 600ms ease-out;
+      opacity: 0;
+      transform: scale(0.5);
+
+      &.current {
+        opacity: 1;
+        transform: scale(1);
       }
     }
   }
@@ -571,27 +587,75 @@ html {
     margin: 20px 0;
   }
 
-  figure {
-    &:extend(.guides figure);
-    box-shadow: -4px -4px 2px 2px hsla(0, 0%, 21%, 0.25), 4px 4px 2px 2px hsla(0, 0%, 81%, 0.25);
+  .button-holder {
+    div {
+      position: relative;
+      width: 300px;
 
-    &:hover {
-      &:extend(.guides figure:hover);
-    }
-
-    div.flex {
-      &:extend(.guides figure div.flex);
-
-      div.img {
-        &:extend(.guides figure div.flex div.img);
-
-        img {
-          &:extend(.guides figure div.flex div.img img);
-        }
+      figure.current {
+        top: -4px;
+        left: -8px;
       }
 
-      p {
-        &:extend(.guides figure div.flex p);
+      figure {
+        width: 300px;
+        padding: 5px;
+        top: 0;
+        left: 0;
+        background-color: @colors[dark];
+        .rounded(18px);
+        transition: transform 600ms ease-in-out, top 400ms, left 400ms;
+        transform: scale(0);
+        position: relative;
+        border: 4px groove @colors[orange];
+        z-index: 4;
+
+        &:hover  {
+          cursor: pointer;
+        }
+
+        div.flex {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div.img {
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          p {
+            font-size: 16;
+            font-family: @text[subtitle];
+            color: @colors[white];
+          }
+        }
+      }
+      span {
+        background-image: linear-gradient(45deg, hsla(0, 0%, 100%, 0.4), hsla(0, 0%, 60%, 0.4));
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        .rounded(18px);
+        bottom: 0;
+        right: 0;
+        display: block;
+        z-index: 1;
+        transition: opacity 400ms ease-in 200ms, transform 600ms ease-out;
+        opacity: 0;
+        transform: scale(0.5);
+
+        &.current {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
     }
   }

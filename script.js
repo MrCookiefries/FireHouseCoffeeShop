@@ -53,6 +53,23 @@ $(document).ready(() => {
   $(".phone-number").on("click", () => {
     window.open("tel:+15732613707", "_blank");
   })
+  //Guide Figure Hover
+  $(".guides div figure").on("mouseover", event => {
+    $(event.currentTarget).parent().find("span").addClass("current");
+    $(event.currentTarget).addClass("current");
+  })
+  $(".guides div figure").on("mouseleave", event => {
+    $(event.currentTarget).parent().find("span").removeClass("current");
+    $(event.currentTarget).removeClass("current");
+  })
+  $(".button-holder div figure").on("mouseover", event => {
+    $(event.currentTarget).parent().find("span").addClass("current");
+    $(event.currentTarget).addClass("current");
+  })
+  $(".button-holder div figure").on("mouseleave", event => {
+    $(event.currentTarget).parent().find("span").removeClass("current");
+    $(event.currentTarget).removeClass("current");
+  })
 })
 
 // Scroll Animations
