@@ -116,13 +116,31 @@ function changeSlides(num) {
       name: "Amber Copeland",
       index: 2,
       slide: 3
+    },
+    darian: {
+      words: "Absolutely fantastic people, great food.",
+      name: "Darian B.",
+      index: 3,
+      slide: 4
+    },
+    sasha: {
+      words: "Pleasant atmosphere, great service, good prices.",
+      name: "Sasha K.",
+      index: 4,
+      slide: 5
+    },
+    sarah: {
+      words: "Nice spot to hang out after school.",
+      name: "Sarah W.",
+      index: 5,
+      slide: 6
     }
   }
   slideIndex += num;
-  if (slideIndex > 2) {
+  if (slideIndex > Object.keys(quotes).length - 1) {
     slideIndex = 0;
   } else if (slideIndex < 0) {
-    slideIndex = 2;
+    slideIndex = Object.keys(quotes).length - 1;
   }
 
   function switchSlide(n) {
@@ -193,6 +211,33 @@ function changeSlides(num) {
         $('#quote').html(quotes.amber.words);
         $('#quote-author').html(quotes.amber.name);
         $('#slide-number').html(quotes.amber.slide);
+        displaySlide(num);
+      }, 600)
+      break;
+    case 3:
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.darian.words);
+        $('#quote-author').html(quotes.darian.name);
+        $('#slide-number').html(quotes.darian.slide);
+        displaySlide(num);
+      }, 600)
+      break;
+    case 4:
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.sasha.words);
+        $('#quote-author').html(quotes.sasha.name);
+        $('#slide-number').html(quotes.sasha.slide);
+        displaySlide(num);
+      }, 600)
+      break;
+    case 5:
+      switchSlide(num);
+      setTimeout(() => {
+        $('#quote').html(quotes.sarah.words);
+        $('#quote-author').html(quotes.sarah.name);
+        $('#slide-number').html(quotes.sarah.slide);
         displaySlide(num);
       }, 600)
       break;
