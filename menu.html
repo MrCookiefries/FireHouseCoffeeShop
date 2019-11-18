@@ -1,310 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firehouse Coffee Shop</title>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Merienda|PT+Sans+Narrow&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="./css/master.min.css" type="text/css">
-  </head>
-  <body>
-    <main class="menu">
-      <header class="nav">
-        <ul class="mobile">
-          <li id="navigation"><span class="navigationSymbol">&#9776;</span>Menu</li>
-        </ul>
-        <ul class="desktop">
-          <li id="logo" class="logo"><img src="./assets/logo.png" alt="Logo"/></li>
-          <li id="home">Home</li>
-          <li id="about">About Us</li>
-          <li id="menu" class="active-page">Our Menu</li>
-        </ul>
-      </header>
-      <h1 id="location-drinks" class="category scroll">Beverages</h1>
-      <section class="food">
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-              <img src="./assets/mochaFrappe.png" alt="Mocha Frappe">
-              </div>
-              <div class="text">
-                <p>Mocha Frappe</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/shake.png" alt="Shake">
-              </div>
-              <div class="text">
-                <p>Shake</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Options of Chocolate, Vanilla, Carmel, or Strawberry.</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/fruitSmoothie.png" alt="Fruit Smoothie">
-              </div>
-              <div class="text">
-                <p>Fruit Smoothie</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/starbucks.png" alt="Starbucks">
-              </div>
-              <div class="text">
-                <p>Starbucks</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/soda.png" alt="Soda">
-              </div>
-              <div class="text">
-                <p>Soda</p>
-                <p>Price - $1.00</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/jonesSoda.png" alt="Jones Soda">
-              </div>
-              <div class="text">
-                <p>Jones Soda</p>
-                <p>Price - $1.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/sweetTea.png" alt="Sweet Tea">
-              </div>
-              <div class="text">
-                <p>Sweet Tea</p>
-                <p>Price - $1.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/powerade.png" alt="Powerade">
-              </div>
-              <div class="text">
-                <p>Powerade</p>
-                <p>Price - $1.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/coffee.png" alt="Coffee">
-              </div>
-              <div class="text">
-                <p>Coffee</p>
-                <p>Price - $1.00</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/espresso.png" alt="Espresso">
-              </div>
-              <div class="text">
-                <p>Espresso</p>
-                <p>Price - $1.00</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/cappuccino.png" alt="Cappuccino">
-              </div>
-              <div class="text">
-                <p>Cappuccino</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/latte.png" alt="Latte">
-              </div>
-              <div class="text">
-                <p>Latte</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-      </section>
-      <h1 id="location-food" class="category scroll">Food</h1>
-      <section class="food">
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/cheeseQuesadilla.png" alt="Cheese Quesadilla">
-              </div>
-              <div class="text">
-                <p>Cheese Quesadilla</p>
-                <p>Price - $1.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/chickenQuesadilla.png" alt="Chicken Quesadilla">
-              </div>
-              <div class="text">
-                <p>Chicken Quesadilla</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/toastedBeefRavioli.png" alt="Toasted Beef Ravioli">
-              </div>
-              <div class="text">
-                <p>Toasted Beef Ravioli</p>
-                <p>Price - $2.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/pizzaRolls.png" alt="Pizza Rolls">
-              </div>
-              <div class="text">
-                <p>Pizza Rolls</p>
-                <p>Price - $1.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Options of either Peperroni or Cheese.</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/cookie.png" alt="Cookie">
-              </div>
-              <div class="text">
-                <p>Cookie</p>
-                <p>Price - $0.50</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-        <div class="wrapper scroll">
-          <figure>
-            <div class="top">
-              <div class="photo">
-                <img src="./assets/chips.png" alt="Chips">
-              </div>
-              <div class="text">
-                <p>Chips</p>
-                <p>Price - $1.00</p>
-              </div>
-            </div>
-            <hr>
-            <p class="description">Info about the menu item</p>
-          </figure>
-        </div>
-      </section>
-      <footer class="footer">
-        <p><span>&#9743;</span> Call Us (<span class="phone-number">573-261-3707</span>)</p>
-        <p><span>&#9993;</span> Email Us (<span class="email">tstory@stjschools.org</span>)</p>
-        <p><a href="https://icons8.com/icon/113532/location">Circle bubble icons by Icons8</a></p>
-      </footer>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./script.js" charset="utf-8"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firehouse Coffee Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Merienda|PT+Sans+Narrow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="./css/master.min.css" type="text/css">
+</head>
+<body>
+  <main class="menu">
+    <header class="nav">
+      <ul class="mobile">
+        <li id="navigation"><span class="navigationSymbol">&#9776;</span>Menu</li>
+      </ul>
+      <ul class="desktop">
+        <li id="logo" class="logo"><img src="./assets/logo.png" alt="Logo"/></li>
+        <li id="home">Home</li>
+        <li id="about">About Us</li>
+        <li id="menu" class="active-page">Our Menu</li>
+      </ul>
+    </header>
+    <h1 id="location-drinks" class="category scroll">Coffee Drinks</h1>
+    <section id="menu-coffee" class="food"></section>
+    <h1 class="category scroll">Non-Coffee Drinks</h1>
+    <section class="food" id="menu-non-coffee"></section>
+    <h1 id="location-food" class="category scroll">Main Dishes</h1>
+    <section class="food" id="menu-main"></section>
+    <h1 class="category scroll">Sides</h1>
+    <section class="food" id="menu-sides"></section>
+    <footer class="footer">
+      <p><span>&#9743;</span> Call Us (<span class="phone-number">573-261-3707</span>)</p>
+      <p><span>&#9993;</span> Email Us (<span class="email">tstory@stjschools.org</span>)</p>
+      <p><a href="https://icons8.com/icon/113532/location">Circle bubble icons by Icons8</a></p>
+    </footer>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./script.js" charset="utf-8"></script>
+</body>
 </html>

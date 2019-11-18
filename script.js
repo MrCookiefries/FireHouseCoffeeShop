@@ -70,33 +70,13 @@ $(document).ready(() => {
     $(event.currentTarget).parent().find("span").removeClass("current");
     $(event.currentTarget).removeClass("current");
   })
+  //Dynamic Menu
+  for (let i = 0; i < menu.length; i++) {
+    addMenuItem(menu[i]);
+  }
 })
-
-// Scroll Animations
-function checkIfInView() {
-  let windowHeight = $window.height();
-  let windowTopPosition = $window.scrollTop();
-  let windowBottomPosition = (windowTopPosition + windowHeight);
-  $.each($scrollAnimateElems, function() {
-    let $element = $(this);
-    let elementHeight = $element.outerHeight();
-    let elementTopPosition = $element.offset().top;
-    let elementBottomPosition = (elementTopPosition + elementHeight);
-    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
-      $element.addClass('in-view');
-    } else {
-      $element.removeClass('in-view');
-    }
-  })
-}
-let $window = $(window);
-let $scrollAnimateElems = $('.scroll');
-$window.on('scroll resize', checkIfInView);
-$window.trigger('scroll');
-
 // Review Quotes
 let slideIndex = 0;
-
 function changeSlides(num) {
   let quotes = {
     amaya: {
@@ -142,7 +122,6 @@ function changeSlides(num) {
   } else if (slideIndex < 0) {
     slideIndex = Object.keys(quotes).length - 1;
   }
-
   function switchSlide(n) {
     if (n == 1) {
       $('.quote').hide("drop", {
@@ -164,7 +143,6 @@ function changeSlides(num) {
       });
     }
   }
-
   function displaySlide(n) {
     if (n == 1) {
       $('.quote').show("drop", {
@@ -188,65 +166,109 @@ function changeSlides(num) {
   }
   switch (slideIndex) {
     case 0:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.amaya.words);
-        $('#quote-author').html(quotes.amaya.name);
-        $('#slide-number').html(quotes.amaya.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.amaya.words);
+      $('#quote-author').html(quotes.amaya.name);
+      $('#slide-number').html(quotes.amaya.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     case 1:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.jameson.words);
-        $('#quote-author').html(quotes.jameson.name);
-        $('#slide-number').html(quotes.jameson.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.jameson.words);
+      $('#quote-author').html(quotes.jameson.name);
+      $('#slide-number').html(quotes.jameson.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     case 2:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.amber.words);
-        $('#quote-author').html(quotes.amber.name);
-        $('#slide-number').html(quotes.amber.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.amber.words);
+      $('#quote-author').html(quotes.amber.name);
+      $('#slide-number').html(quotes.amber.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     case 3:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.darian.words);
-        $('#quote-author').html(quotes.darian.name);
-        $('#slide-number').html(quotes.darian.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.darian.words);
+      $('#quote-author').html(quotes.darian.name);
+      $('#slide-number').html(quotes.darian.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     case 4:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.sasha.words);
-        $('#quote-author').html(quotes.sasha.name);
-        $('#slide-number').html(quotes.sasha.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.sasha.words);
+      $('#quote-author').html(quotes.sasha.name);
+      $('#slide-number').html(quotes.sasha.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     case 5:
-      switchSlide(num);
-      setTimeout(() => {
-        $('#quote').html(quotes.sarah.words);
-        $('#quote-author').html(quotes.sarah.name);
-        $('#slide-number').html(quotes.sarah.slide);
-        displaySlide(num);
-      }, 600)
-      break;
+    switchSlide(num);
+    setTimeout(() => {
+      $('#quote').html(quotes.sarah.words);
+      $('#quote-author').html(quotes.sarah.name);
+      $('#slide-number').html(quotes.sarah.slide);
+      displaySlide(num);
+    }, 600)
+    break;
     default:
-      console.log("Error with quotes panel.");
-      break;
+    console.log("Error with quotes panel.");
+    break;
   }
 }
-/*const title = document.querySelectorAll("#main-title path");
-for (let i = 0; i < title.length; i++) {
-  console.log(`Letter ${i} is ${title[i].getTotalLength()}`);
-}*/
+function addMenuItem(item) {
+  $(`#menu-${item.type}`).append(`<div class="wrapper scroll">
+  <figure>
+  <div class="top">
+  <div class="photo">
+  <img src="./assets/${item.path}" alt="${item.name}">
+  </div>
+  <div class="text">
+  <p>${item.name}</p>
+  <p>Price - $${item.cost}</p>
+  </div>
+  </div>
+  <hr>
+  <p class="description">${item.info}</p>
+  </figure>
+  </div>`)
+}
+const menu = [{name: "Coffee", cost: "1.00", path: "coffee.png", type: "coffee", info: "Basic Cup of Joe"},
+{type: "coffee", name: "Iced Coffee", cost: "2.00", path: "icedCoffee.png", info: "Like Coffee, But Cold"},
+{type: "coffee", name: "Espresso", cost: "2.50", path: "espresso.png", info: "For Your Caffeine Fix"},
+{type: "coffee", name: "Latte", cost: "2.50", path: "latte.png", info: "Like Espresso, But Foamy"},
+{type: "coffee", name: "Starbucks Coffee", cost: "2.50", path: "starbucks.png", info: "See Drink Cooler"},
+{type: "main", name: "Chicken & Greens Panini", cost: "3.00", path: "chickenNGreensPanini.png", info: "Without Chips or Soda, the Price is $2.50"},
+{type: "main", name: "Cheese Panini", cost: "3.00", path: "cheesePanini.png", info: "Without Chips or Soda, the Price is $2.50"},
+{type: "main", name: "Tom/Mozz Panini", cost: "3.00", path: "tomMozzPanini.png", info: "Just the Greens"},
+{type: "main", name: "Chicken Quesadilla", cost: "2.50", path: "chickenQuesadilla.png", info: "Cheesy Frisbee with Chicken"},
+{type: "main", name: "Cheese Quesadilla", cost: "2.00", path: "cheeseQuesadilla.png", info: "Cheesy Frisbee"},
+{type: "main", name: "Pepperoni Bosco Sticks", cost: "2.50", path: "pepperoniBoscoSticks.png", info: "Cheese Stick with Meat"},
+{type: "main", name: "Cheese Bosco Sticks", cost: "2.00", path: "cheeseBoscoSticks.png", info: "Like a Big Cheese Stick"},
+{type: "main", name: "Chicken Wrap", cost: "3.00", path: "chickenWrap.png", info: "Without Chips or Soda, the Price is $2.50"},
+{type: "main", name: "Beef Taco Burrito", cost: "3.00", path: "beefTacoBurrito.png", info: "Burrito Taco Style. Only Available on Mondays"},
+{type: "main", name: "Chicken Taco Burrito", cost: "3.00", path: "chickenTacoBurrito.png", info: "Burrito Taco Style. Only Available on Mondays"},
+{type: "non-coffee", name: "Shake", cost: "2.50", path: "shake.png", info: "See Shake Options In Shop"},
+{type: "non-coffee", name: "Smoothie", cost: "2.50", path: "fruitSmoothie.png", info: "Real Fruit Taste"},
+{type: "non-coffee", name: "Hot Chocolate", cost: "2.00", path: "hotChocolate.png", info: "Choice of Water or Milk"},
+{type: "non-coffee", name: "Steamer", cost: "2.50", path: "steamer.png", info: "Hot Milk"},
+{type: "non-coffee", name: "Powerade", cost: "1.50", path: "powerade.png", info: "See Drink Cooler"},
+{type: "non-coffee", name: "Bottled Soda", cost: "1.50", path: "jonesSoda.png", info: "See Drink Cooler"},
+{type: "non-coffee", name: "Canned Soda", cost: "1.00", path: "soda.png", info: "See Drink Cooler"},
+{type: "sides", name: "Chicken Poppers", cost: "2.50", path: "chickenPoppers.png", info: "Bite Sized Chicken"},
+{type: "sides", name: "Cheese Balls", cost: "2.50", path: "cheeseBalls.png", info: "Fried Cheese Cubes"},
+{type: "sides", name: "Tater Tots", cost: "1.50", path: "taterTots.png", info: "Bite Sized Hashbrowns"},
+{type: "sides", name: "French Fries", cost: "2.00", path: "frenchFries.png", info: "Greek Seasoning"},
+{type: "sides", name: "Fried Pickles", cost: "2.50", path: "friedPickles.png", info: "Fried in the Air"},
+{type: "sides", name: "Cookie", cost: "0.50", path: "cookie.png", info: "See Pastry Selection"},
+{type: "sides", name: "Pastries", cost: "_.__", path: "pastries", info: "See Pastry Selection. The price will vary"},
+{type: "sides", name: "Chips", cost: "1.00", path: "chips.png", info: "Your Choice of Chips"},
+{type: "sides", name: "Beef Ravioli", cost: "2.50", path: "toastedBeefRavioli.png", info: "Toasted Ravioli"}];

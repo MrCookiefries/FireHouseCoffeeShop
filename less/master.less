@@ -7,14 +7,6 @@
   box-sizing: border-box;
 }
 
-.scroll {
-  transform: scale(0);
-}
-
-.in-view {
-  animation: grow 1s ease-in-out forwards;
-}
-
 /* Variables */
 @colors: {
   white: hsla(0, 100%, 100%, 1);
@@ -51,16 +43,6 @@ html {
 
   100% {
     transform: rotate(360deg) scale(1);
-  }
-}
-@keyframes grow {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 @keyframes line-anim {
