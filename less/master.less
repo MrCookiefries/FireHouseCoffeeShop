@@ -21,7 +21,6 @@
   subtitle: 'Libre Baskerville', serif;
   paragraph: 'PT Sans Narrow', sans-serif;
 }
-
 body,
 html {
   font-family: @text[paragraph];
@@ -214,149 +213,28 @@ html {
   position: absolute;
 
   #main-title {
-    text-align: center;
+    width: 100%;
+    height: $width;
     padding: 20px;
-    animation: fill 6s ease forwards 4s;
     fill: url("#title-gradient") @colors[yellow];
+    animation: fill 4s ease forwards 1s;
     fill-opacity: 0;
 
     path {
       stroke: @colors[white];
-      font-weight: 900;
-      font: 400px;
       stroke-width: 4px;
     }
 
     path:nth-child(1) {
-      stroke-dasharray: 255.74264526367188px;
-      stroke-dashoffset: 255.74264526367188px;
-      animation: line-anim 3s ease forwards;
+      stroke-dasharray: 600px;
+      stroke-dashoffset: 600px;
+      animation: line-anim 3s ease forwards 1s;
     }
 
     path:nth-child(2) {
-      stroke-dasharray: 382.3831481933594px;
-      stroke-dashoffset: 382.3831481933594px;
-      animation: line-anim 3s ease forwards 200ms;
-    }
-
-    path:nth-child(3) {
-      stroke-dasharray: 283.9996643066406px;
-      stroke-dashoffset: 283.9996643066406px;
-      animation: line-anim 3s ease forwards 400ms;
-    }
-
-    path:nth-child(4) {
-      stroke-dasharray: 296.2818603515625px;
-      stroke-dashoffset: 296.2818603515625px;
-      animation: line-anim 3s ease forwards 600ms;
-    }
-
-    path:nth-child(5) {
-      stroke-dasharray: 183.39788818359375px;
-      stroke-dashoffset: 183.39788818359375px;
-      animation: line-anim 3s ease forwards 800ms;
-    }
-
-    path:nth-child(6) {
-      stroke-dasharray: 232.99571228027344px;
-      stroke-dashoffset: 232.99571228027344px;
-      animation: line-anim 3s ease forwards 1000ms;
-    }
-
-    path:nth-child(7) {
-      stroke-dasharray: 283.9999084472656px;
-      stroke-dashoffset: 283.9999084472656px;
+      stroke-dasharray: 600px;
+      stroke-dashoffset: 600px;
       animation: line-anim 3s ease forwards 1200ms;
-    }
-
-    path:nth-child(8) {
-      stroke-dasharray: 382.3827819824219px;
-      stroke-dashoffset: 382.3827819824219px;
-      animation: line-anim 3s ease forwards 1400ms;
-    }
-
-    path:nth-child(9) {
-      stroke-dasharray: 323.28472900390625px;
-      stroke-dashoffset: 323.28472900390625px;
-      animation: line-anim 3s ease forwards 1600ms;
-    }
-
-    path:nth-child(10) {
-      stroke-dasharray: 307.59698486328125px;
-      stroke-dashoffset: 307.59698486328125px;
-      animation: line-anim 3s ease forwards 1800ms;
-    }
-
-    path:nth-child(11) {
-      stroke-dasharray: 284.0420837402344px;
-      stroke-dashoffset: 284.0420837402344px;
-      animation: line-anim 3s ease forwards 2000ms;
-    }
-
-    path:nth-child(12) {
-      stroke-dasharray: 284.0003967285156px;
-      stroke-dashoffset: 284.0003967285156px;
-      animation: line-anim 3s ease forwards 2200ms;
-    }
-
-    path:nth-child(13) {
-      stroke-dasharray: 349.95953369140625px;
-      stroke-dashoffset: 349.95953369140625px;
-      animation: line-anim 3s ease forwards 2400ms;
-    }
-
-    path:nth-child(14) {
-      stroke-dasharray: 323.2853088378906px;
-      stroke-dashoffset: 323.2853088378906px;
-      animation: line-anim 3s ease forwards 2600ms;
-    }
-
-    path:nth-child(15) {
-      stroke-dasharray: 322.34197998046875px;
-      stroke-dashoffset: 322.34197998046875px;
-      animation: line-anim 3s ease forwards 2800ms;
-    }
-
-    path:nth-child(16) {
-      stroke-dasharray: 322.3418884277344px;
-      stroke-dashoffset: 322.3418884277344px;
-      animation: line-anim 3s ease forwards 3000ms;
-    }
-
-    path:nth-child(17) {
-      stroke-dasharray: 284.0007629394531px;
-      stroke-dashoffset: 284.0007629394531px;
-      animation: line-anim 3s ease forwards 3200ms;
-    }
-
-    path:nth-child(18) {
-      stroke-dasharray: 284.00079345703125px;
-      stroke-dashoffset: 284.00079345703125px;
-      animation: line-anim 3s ease forwards 3400ms;
-    }
-
-    path:nth-child(19) {
-      stroke-dasharray: 392.7993469238281px;
-      stroke-dashoffset: 392.7993469238281px;
-      animation: line-anim 3s ease forwards 3600ms;
-    }
-
-    path:nth-child(20) {
-      stroke-dasharray: 382.3751525878906px;
-      stroke-dashoffset: 382.3751525878906px;
-      animation: line-anim 3s ease forwards 3800ms;
-    }
-
-    path:nth-child(21) {
-      stroke-dasharray: 323.29254150390625px;
-      stroke-dashoffset: 323.29254150390625px;
-      animation: line-anim 3s ease forwards 4000ms;
-    }
-
-    path:nth-child(22) {
-      stroke-dasharray: 379.06097412109375px;
-      stroke-dashoffset: 379.06097412109375px;
-      animation: line-anim 3s ease forwards 4200ms;
     }
   }
 }
@@ -441,7 +319,6 @@ html {
       background-color: @colors[dark];
       .rounded(18px);
       transition: transform 600ms ease-in-out, top 400ms, left 400ms;
-      transform: scale(0);
       position: relative;
       border: 4px groove @colors[orange];
       z-index: 4;
@@ -596,7 +473,6 @@ html {
         background-color: @colors[dark];
         .rounded(18px);
         transition: transform 600ms ease-in-out, top 400ms, left 400ms;
-        transform: scale(0);
         position: relative;
         border: 4px groove @colors[orange];
         z-index: 4;
